@@ -9,7 +9,6 @@ A simple command-line calculator built with Node.js that supports the most commo
 | Addition       | `+`      | `10 + 5 = 15`    |
 | Subtraction    | `-`      | `10 - 3 = 7`     |
 | Multiplication | `*`      | `4 * 7 = 28`     |
-| Division       | `/`      | `20 / 4 = 5`     |
 | Modulus        | `%`      | `17 % 5 = 2`     |
 | Power          | `**`     | `2 ** 8 = 256`   |
 
@@ -40,11 +39,8 @@ node calculator.js
 10 + 5 = 15
 10 - 3 = 7
 4 * 7 = 28
-20 / 4 = 5
 17 % 5 = 2
 2 ** 8 = 256
-
-Error caught: Division by zero is not allowed
 ```
 
 ## Usage as a Module
@@ -52,16 +48,14 @@ Error caught: Division by zero is not allowed
 You can import the calculator functions into your own Node.js project:
 
 ```js
-const { add, subtract, multiply, divide, modulus, power, calculate } = require('./calculator');
+const { add, subtract, multiply, modulus, power, calculate } = require('./calculator');
 
 console.log(add(3, 4));              // 7
-console.log(divide(10, 2));          // 5
 console.log(calculate(2, '**', 10)); // 1024
 ```
 
 ## Error Handling
 
-- Division by zero throws an `Error` with the message `Division by zero is not allowed`.
 - An unknown operator throws an `Error` with the message `Unknown operator: <op>`.
 
 ## Project Structure

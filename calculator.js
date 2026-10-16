@@ -31,20 +31,6 @@ function multiply(a, b) {
 }
 
 /**
- * Divide a by b
- * @param {number} a
- * @param {number} b
- * @returns {number}
- * @throws {Error} if b is zero
- */
-function divide(a, b) {
-  if (b === 0) {
-    throw new Error('Division by zero is not allowed');
-  }
-  return a / b;
-}
-
-/**
  * Calculate modulus (remainder) of a divided by b
  * @param {number} a
  * @param {number} b
@@ -82,8 +68,6 @@ function calculate(a, operator, b) {
       return subtract(a, b);
     case '*':
       return multiply(a, b);
-    case '/':
-      return divide(a, b);
     case '%':
       return modulus(a, b);
     case '**':
@@ -98,7 +82,6 @@ const examples = [
   [10, '+', 5],
   [10, '-', 3],
   [4,  '*', 7],
-  [20, '/', 4],
   [17, '%', 5],
   [2,  '**', 8],
 ];
@@ -109,11 +92,4 @@ examples.forEach(([a, op, b]) => {
   console.log(`${a} ${op} ${b} = ${result}`);
 });
 
-// Division by zero example
-try {
-  calculate(5, '/', 0);
-} catch (err) {
-  console.log(`\nError caught: ${err.message}`);
-}
-
-module.exports = { add, subtract, multiply, divide, modulus, power, calculate };
+module.exports = { add, subtract, multiply, modulus, power, calculate };
